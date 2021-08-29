@@ -1,38 +1,221 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1rem;
+  padding-top: 2rem;
+}
+
+:root {
+  --base-size: 1.11rem;
+  --type-scale: 1.27;
+  --height-scale: 1.2;
+  --line-height: 1.6rem;
+  --h5: var(--base-size);
+  --parag: calc(var(--base-size) * var(--type-scale));
+  --h4: calc(var(--parag) * var(--type-scale));
+  --h3: calc(var(--h4) * var(--type-scale));
+  --h2: calc(var(--h3) * var(--type-scale));
+  --h1: calc(var(--h2) * var(--type-scale));
+  --h5-Lheight: var(--line-height);
+  --para-Lheight: calc(var(--line-height) * var(--height-scale));
+  --h4-Lheight: calc(var(--para-Lheight) * var(--height-scale));
+  --h3-Lheight: calc(var(--h4-Lheight) * var(--height-scale));
+  --h2-Lheight: calc(var(--h3-Lheight) * var(--height-scale));
+  --h1-Lheight: calc(var(--h2-Lheight) * var(--height-scale));
+  --primary-color: #1f4e79;
+  --secondary-color: #f7f7f7;
+}
+
+.h1 {
+  font-size: var(--h1);
+  line-height: var(--h1-Lheight);
+}
+  
+.h2 {
+  font-size: var(--h2);
+  line-height: var(--h2-Lheight);
+}
+  
+.h3 {
+  font-size: var(--h3);
+  line-height: var(--h3-Lheight);
+}
+  
+.h4 {
+  font-size: var(--h4);
+  line-height: var(--h4-Lheight);
+}
+  
+.h5 {
+  font-size: var(--h5);
+  line-height: var(--h5-Lheight);
+}
+  
+.parag,
+a,
+button {
+  font-size: var(--parag);
+  line-height: var(--para-Lheight);
+}
+
+button,
+span,
+img {
+  display: inline-block;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn {
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+} 
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.text-center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tours-container {
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+  max-width: 114rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tour-img {
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tour-btn {
+  text-align: center;
+}
+
+.remove-tour {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.remove-tour:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.more-info {
+  background-color: transparent;
+  color: aquamarine;
+  border: none;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+.mt-3 {
+  margin-top: 2rem;
+}
+
+.my-4 {
+  margin: 3rem 0;
+}
+
+.card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 0.8rem;
+  border: 0.1rem solid #ccc;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.card-body {
+  padding: 1rem 0.75rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  color: aquamarine;
+  border-radius: 0.4rem;
+  border: 0.1rem solid aquamarine;
+  padding: 0.4rem;
+}
+
+@media only screen and (min-width: 600px) {
+  :root {
+    --base-size: 1.11rem;
+    --type-scale: 1.27;
+    --height-scale: 1.2;
+    --line-height: 1.6rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .tours-container {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .tours-container {
+    max-width: 65%;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  :root {
+    --type-scale: 1.23;
+    --base-size: 1.3rem;
+    --height-scale: 1.14;
+  }
+
+  .tours-container {
+    max-width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :root {
+    --type-scale: 1.25;
+    --base-size: 1.45rem;
+    --height-scale: 1.2;
+    --line-height: 2.1rem;
   }
 }
